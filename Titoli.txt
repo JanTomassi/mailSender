@@ -1,0 +1,7 @@
+Data
+Numero del articolo
+Sono un Titolo
+Sono un sommario
+Sono il nome del articolo
+Sono una cit
+Sono la persona cit
