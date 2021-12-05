@@ -1,5 +1,5 @@
-# mailSender
-pip install pyinstaller
+# mailSender compile 
+pip install pyinstaller  
 pyinstaller -F mail.py
 # Per gli user
 
