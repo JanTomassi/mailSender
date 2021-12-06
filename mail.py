@@ -148,10 +148,15 @@ message.attach(MIMEText(mail_content, 'html'))
 print(message)
 
 # Create SMTP session for sending the mail
-session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
-session.starttls() #enable security
-session.login(sender_address, sender_pass) #login with mail_id and password
-text = message.as_string()
-session.sendmail(sender_address, receiver_address, text)
-session.quit()
-print('Mail Sent')
+try:
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    print('Mail Sent')
+except smtplib.SMTPAuthenticationError as err:
+    print(err)
+finally:
+    input("Wait for input to close ")
